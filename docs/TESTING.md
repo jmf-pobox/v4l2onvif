@@ -81,7 +81,7 @@ it as a SOAP client.
 
 ### Two driver options, by purpose
 
-- **`onvif-client.exe`** (already built by `make`) — easiest path. The
+- **`onvif-client`** (already built by `make`) — easiest path. The
   client speaks real ONVIF over the wire and writes its output to stdout.
   Tests fork-exec it with specific arguments and assert on stdout / exit
   code. Good for happy-path coverage.
@@ -128,7 +128,7 @@ result it expects. Slower than L2, but catches client-specific quirks
 
 ### Clients to run in this layer
 
-- **`onvif-client.exe`** — our own
+- **`onvif-client`** — our own
 - **`gst-launch` with `onvifsrc`** — gstreamer's ONVIF client
 - **`python-onvif-zeep`** — Home Assistant's library; the canonical
   reference for "does it work with a real ONVIF consumer"
@@ -150,7 +150,7 @@ L1+L2+L3.
 The Win11 checklist (run only after L1–L3 are green):
 
 1. Boot the win11 VM (NAT on virbr0).
-2. Start the server: `onvif-server.exe -H 8080 -R 8554 -i /dev/v4l/by-id/...`.
+2. Start the server: `onvif-server -H 8080 -R 8554 -i /dev/v4l/by-id/...`.
 3. Win11 Settings → Bluetooth & devices → Cameras → Add a network camera
    → Search.
 4. Camera should appear; Add it (admin/admin if asked — we ignore creds).
@@ -209,5 +209,5 @@ of value:
    a discoverable frame rate.
 6. **GetProfiles structure** — no empty `<tt:Name/>`, no empty PTZ/
    Analytics/Metadata subtrees for webcam-class devices.
-7. **L2 round-trip with `onvif-client.exe`** — Discovery → Profile →
+7. **L2 round-trip with `onvif-client`** — Discovery → Profile →
    StreamUri → ffprobe the URL; asserts the entire happy path end-to-end.

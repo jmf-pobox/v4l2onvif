@@ -104,5 +104,5 @@ into a failing L1 or L2 test before any code change.
 - Keep Win11 as primary (cheaper to set up; we already had it
   running). But: 60× slower iteration, no regression coverage.
 **Consequences:** First session of every new ONVIF feature adds an
-integration test that drives the feature with `onvif-client.exe`.
+integration test that drives the feature with `onvif-client`.
 **Tests:** This ADR is enforced by code review, not a test.

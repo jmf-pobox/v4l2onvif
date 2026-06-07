@@ -51,9 +51,9 @@ Test names are sentences. Tags group related tests for `ctest -R`.
 
 For tests that need a running server:
 
-1. Fork-exec `onvif-server.exe` bound to `127.0.0.1` on a test-only
+1. Fork-exec `onvif-server` bound to `127.0.0.1` on a test-only
    port (Catch2 `BeforeAll`-equivalent fixture).
-2. Drive it with `onvif-client.exe` or raw libcurl + a SOAP envelope
+2. Drive it with `onvif-client` or raw libcurl + a SOAP envelope
    string from `tests/fixtures/`.
 3. Assert on the response XML (string match on key fields, schema
    validation for envelope correctness).
@@ -76,7 +76,7 @@ gst-launch from the test fixture).
 | `synthetic_v4l2` | Loads `v4l2loopback` if absent, opens `/dev/video99` |
 | `soap_context` | Per-test `soap*` with `soap_new` + teardown |
 | `service_context_with_devices` | Pre-populated `ServiceContext::m_devices` and `m_devicePaths` |
-| `running_onvif_server` | Forks `onvif-server.exe` on a test port |
+| `running_onvif_server` | Forks `onvif-server` on a test port |
 
 ## Don't Test
 

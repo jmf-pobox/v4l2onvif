@@ -9,7 +9,7 @@ current pre-CI state).
 
 **MANDATORY WORKFLOW:**
 
-1. **Stop all background processes** — `onvif-server.exe`, `tcpdump`,
+1. **Stop all background processes** — `onvif-server`, `tcpdump`,
    `mediamtx`, `ustreamer`, etc. Leave the camera bound to `uvcvideo` and
    ports 8080 / 8554 / 3702 free.
 2. **Verify quality gates** if code changed:

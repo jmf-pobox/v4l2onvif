@@ -20,9 +20,9 @@
 
 ## Usage
 
-    onvif-server.exe [-H http port] [-R rtsp port] [-u username] [-p password] [-i v4l2 input device] [-o v4l2 output device]
+    onvif-server [-H http port] [-R rtsp port] [-u username] [-p password] [-i v4l2 input device] [-o v4l2 output device]
 
-    onvif-client.exe [-u username] [-p password] url
+    onvif-client [-u username] [-p password] url
 
 
 Using Docker image
@@ -35,7 +35,7 @@ You can expose V4L2 devices from your host using :
 
         docker run --device=/dev/video0 -p 8080:8080 -it mpromonet/v4l2onvif
 
-The container entry point is the onvif-server.exe application, then you can :
+The container entry point is the onvif-server application, then you can :
 
 * get the help using :
 

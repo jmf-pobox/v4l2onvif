@@ -58,7 +58,7 @@ before writing any code.
 
 ## Project Overview
 
-`onvif-server.exe` is a daemon that:
+`onvif-server` is a daemon that:
 
 1. Opens one or more V4L2 devices and serves their streams over RTSP
    (via the bundled `v4l2rtspserver` submodule, which embeds `live555`).
@@ -82,7 +82,7 @@ before writing any code.
   integration test if it spans a SOAP request; protocol test if it touches
   Discovery/RTSP wire format.
 - **Sanitizers are part of the test suite.** ASan + UBSan run in CI.
-- **Dogfood before shipping.** Build, run against `onvif-client.exe`, verify
+- **Dogfood before shipping.** Build, run against `onvif-client`, verify
   Discovery + Profile + StreamUri round-trip.
 - **Don't defer obvious work.** A one-line fix you can do now does not belong
   in a follow-up.

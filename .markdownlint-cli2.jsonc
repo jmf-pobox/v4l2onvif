@@ -1,0 +1,17 @@
+// markdownlint-cli2 configuration — points at .markdownlint.jsonc for rules,
+// scopes to our files only (submodules, generated sources, live555 are out).
+{
+  "config": {
+    "extends": ".markdownlint.jsonc"
+  },
+  "globs": [
+    "**/*.md"
+  ],
+  "ignores": [
+    "v4l2rtspserver/**",
+    "ws-discovery/**",
+    "live/**",
+    "gen/**",
+    "node_modules/**"
+  ]
+}

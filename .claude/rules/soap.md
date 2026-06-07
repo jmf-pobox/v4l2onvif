@@ -87,7 +87,7 @@ captures a backtrace on `std::bad_alloc` and other uncaught
 exceptions. Keep it. When debugging a new crash:
 
 1. Run under Debug build (symbols).
-2. Use `addr2line -e onvif-server.exe -fiC <addrs>` to decode
+2. Use `addr2line -e onvif-server -fiC <addrs>` to decode
    backtrace frames.
 3. The actual bug is usually in the request *before* the one that
    crashed (heap corruption shows on the next allocation).

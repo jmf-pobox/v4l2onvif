@@ -12,7 +12,7 @@ for one-shot builds, but `make check` and all gates drive CMake.
 cmake --preset debug                          # Configure (build/, Debug)
 cmake --build build                           # Build server, client, tests
 ctest --test-dir build --output-on-failure    # Run unit + integration tests
-./build/onvif-server.exe -H 8080 -R 8554 -i /dev/video0    # Run the daemon
+./build/onvif-server -H 8080 -R 8554 -i /dev/video0    # Run the daemon
 ```
 
 ### Sanitizer Build (ASan + UBSan)

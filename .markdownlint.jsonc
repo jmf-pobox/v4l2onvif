@@ -1,0 +1,25 @@
+// Markdown lint configuration for the v4l2onvif fork.
+//
+// Rule reference: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+{
+  "default": true,
+
+  // Line length — prose is wrapped ~72 chars, tables and code blocks can be longer.
+  "MD013": {
+    "line_length": 100,
+    "tables": false,
+    "code_blocks": false,
+    "headings": false
+  },
+
+  // Allow inline HTML for things markdown can't express (we mostly don't need this).
+  "MD033": false,
+
+  // Allow bare URLs in citations.
+  "MD034": false,
+
+  // Allow ordered list markers other than `1.` — we use `1. 2. 3.` for clarity in long lists.
+  "MD029": {
+    "style": "ordered"
+  }
+}

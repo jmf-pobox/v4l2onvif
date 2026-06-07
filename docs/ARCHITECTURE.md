@@ -1,6 +1,6 @@
 # Architecture
 
-This document describes the current architecture of `onvif-server.exe`
+This document describes the current architecture of `onvif-server`
 as it lives in this fork. For deltas from upstream, see `docs/PATCHES.md`.
 For design decisions, see `docs/DESIGN.md`.
 
@@ -8,7 +8,7 @@ For design decisions, see `docs/DESIGN.md`.
 
 ```text
 ┌──────────────────────────────────────────────────────────────────────┐
-│                          onvif-server.exe                            │
+│                          onvif-server                            │
 │                                                                      │
 │  ┌────────────────────┐    ┌──────────────────────────────────────┐  │
 │  │  main thread       │    │  wsdd thread (std::thread)           │  │
@@ -68,12 +68,12 @@ Once the listeners are running, treat `ServiceContext` as immutable.
 | 3702 UDP | WS-Discovery | Probe responder |
 | 8554/UDP 8001/UDP 8000 | RTP/RTCP | live555 (data channels) |
 
-`onvif-server.exe -H <http_port> -R <rtsp_port> -i <device>` controls
+`onvif-server -H <http_port> -R <rtsp_port> -i <device>` controls
 the first two; UDP ports are picked by live555.
 
 ## Configuration
 
-- Command-line flags (see `onvif-server.exe -h`).
+- Command-line flags (see `onvif-server -h`).
 - `V4L2ONVIF_IP` environment variable: override for the host IP
   advertised in `XAddrs` and `MediaUri`. See ADR-003 and ADR for the
   env override.

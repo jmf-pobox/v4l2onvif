@@ -1,0 +1,50 @@
+# clang-format configuration for the v4l2onvif fork.
+#
+# Scope: our new files (tests/, modernized src/). Upstream files are
+# modernized incrementally — they will fail this style until touched.
+# See .claude/rules/cxx-code.md for the full code hygiene rule set.
+
+---
+Language: Cpp
+BasedOnStyle: LLVM
+Standard: c++20
+
+# Indent with tabs, 4-space tab width (matches upstream's mixed convention,
+# normalized to tabs for indent / spaces for alignment).
+UseTab: ForIndentation
+TabWidth: 4
+IndentWidth: 4
+
+# Wrap at 100 columns.
+ColumnLimit: 100
+
+# Allman-style braces (matches upstream).
+BreakBeforeBraces: Allman
+
+# Pointer alignment: pointer follows the type (`Foo* p` not `Foo *p`).
+PointerAlignment: Left
+
+# Don't break before binary operators.
+BreakBeforeBinaryOperators: None
+
+# Include order: system <…>, then project "…", grouped.
+IncludeBlocks: Regroup
+SortIncludes: CaseInsensitive
+IncludeCategories:
+  - Regex:    '<[a-z_]+>'
+    Priority: 1
+  - Regex:    '<[a-zA-Z_/.]+>'
+    Priority: 2
+  - Regex:    '".*"'
+    Priority: 3
+
+# No single-line if/for — write the body on its own line.
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+
+# Constructor initializer list on its own lines when wrapping.
+PackConstructorInitializers: NextLine
+
+# Keep trailing commas in array/struct initializers.
+InsertTrailingCommas: Wrapped

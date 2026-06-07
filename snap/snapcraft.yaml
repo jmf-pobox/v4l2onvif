@@ -32,10 +32,10 @@
 
   apps:
     server:
-      command: onvif-server.exe -H $http_port -P $rtsp_port -i $devices
+      command: onvif-server -H $http_port -P $rtsp_port -i $devices
       daemon: simple
       plugs: [network-bind, camera]
 
     client:
-      command: onvif-client.exe 
+      command: onvif-client 
 
